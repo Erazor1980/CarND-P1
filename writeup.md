@@ -39,21 +39,21 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 * drawing solid left (red) and right (blue) line
 * additionaly drawing small green circles for center points used for fitting lines with RANSAC
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+An example of the final output image is shown below:
 
 ![alt text][image1]
 
 
-###2. Identify potential shortcomings with your current pipeline
+Possible problems, which could occure:
+
+* driving a steeper curve could lead to lane markers outside of the set ROI
+* other cars (on the lines) could cause phantom line detections
+* dirty lines could lead to too less line detections for RANSAC line fitting
+* different resolutions and/or positions of the camera could lead to wrong positioned ROI in image
 
 
-One potential shortcoming would be what would happen when ... 
+Potential improvement:
 
-Another shortcoming could be ...
-
-
-###3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+* optimizing canny parameters
+* optimizing line fitting (maybe better outlier rejection)
+* optimizing hough transfrom parameters
